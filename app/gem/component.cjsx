@@ -1,3 +1,5 @@
+'use strict'
+
 actions = require './actions'
 store = require './store'
 
