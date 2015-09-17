@@ -2,10 +2,7 @@ actions = require './actions'
 store = require './store'
 
 Gem = React.createClass
-  mixins: [Reflux.listenTo store, 'onStatusChange']
-
-  onStatusChange: (status) ->
-    @setState status: status
+  mixins: [Reflux.connect store, 'status']
 
   onClick: (event) ->
     actions.toggleGem()
