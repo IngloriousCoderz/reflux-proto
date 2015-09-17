@@ -1,0 +1,16 @@
+{
+  "name": "reflux-prototype",
+  "version": "1.0.0",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.13.3",
+    "reflux": "~0.2.12"
+  }
+}
