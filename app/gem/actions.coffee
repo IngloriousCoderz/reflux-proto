@@ -1,6 +1,7 @@
 'use strict'
 
-toggleGem = Reflux.createAction()
+actions = Reflux.createActions [
+  'toggleGem'
+]
 
-module.exports =
-  toggleGem: toggleGem
+module.exports = actions
