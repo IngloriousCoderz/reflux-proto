@@ -2,13 +2,9 @@ actions = require './actions'
 store = require './store'
 
 Gem = React.createClass
-  componentDidMount: ->
-    @unsubscribe = store.listen @onGemChange
+  mixins: [Reflux.listenTo store, 'onStatusChange']
 
-  componentWillUnmount: ->
-    @unsubscribe()
-
-  onGemChange: (status) ->
+  onStatusChange: (status) ->
     @setState status: status
 
   onClick: (event) ->
