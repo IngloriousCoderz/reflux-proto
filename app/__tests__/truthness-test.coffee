@@ -2,5 +2,9 @@
 
 describe 'truthness', ->
   it 'should be true', ->
-    expect(true).toBeTruthy
+    expect(true).toBeTruthy()
+    return
+
+  xit 'should be left pending', ->
+    expect(true).not.toBeFalsy()
     return
