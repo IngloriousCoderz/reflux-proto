@@ -3,11 +3,11 @@
 actions = require './actions'
 
 store = Reflux.createStore
-  init: ->
-    @isGemActivated = false
-    @listenTo actions.toggleGem, @handleToggleGem
+  listenables: actions
 
-  handleToggleGem: ->
+  init: -> @isGemActivated = false
+
+  onToggleGem: ->
     @isGemActivated = not @isGemActivated
     @trigger @isGemActivated
 
