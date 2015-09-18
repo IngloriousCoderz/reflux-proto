@@ -1,5 +1,7 @@
 'use strict'
 
+Reflux = window?.Reflux or require 'reflux'
+React = window?.React or require 'react'
 {toggleGem} = require './actions'
 store = require './store'
 

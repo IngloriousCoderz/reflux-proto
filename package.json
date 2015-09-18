@@ -3,28 +3,41 @@
   "version": "1.0.0",
   "private": true,
   "jest": {
+    "unmockedModulePathPatterns": [
+      "react",
+      "reflux"
+    ],
     "scriptPreprocessor": "preprocessor.js",
     "testFileExtensions": [
       "coffee",
       "litcoffee",
       "coffee.md",
-      "js"
+      "js",
+      "jsx",
+      "cjsx"
     ],
     "moduleFileExtensions": [
       "coffee",
       "litcoffee",
       "coffee.md",
-      "js"
+      "js",
+      "jsx",
+      "cjsx"
     ]
   },
   "scripts": {
     "test": "jest",
     "start": "jest && brunch w"
   },
+  "dependencies": {
+    "react": "^0.13.3",
+    "reflux": "^0.2.12"
+  },
   "devDependencies": {
     "appcache-brunch": "^1.7.1",
     "browser-sync-brunch": "0.0.9",
     "brunch": "^1.8.5",
+    "coffee-react": "^4.0.0",
     "coffee-script": "^1.10.0",
     "coffee-script-brunch": "^1.8.2",
     "csso-brunch": "^1.0.1",

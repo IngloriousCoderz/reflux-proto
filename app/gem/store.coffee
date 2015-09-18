@@ -1,5 +1,6 @@
 'use strict'
 
+Reflux = window?.Reflux or require 'reflux'
 actions = require './actions'
 
 store = Reflux.createStore
