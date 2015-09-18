@@ -1,13 +1,13 @@
 'use strict'
 
-actions = require './actions'
+{toggleGem} = require './actions'
 store = require './store'
 
 Gem = React.createClass
   mixins: [Reflux.connect store, 'status']
 
   onClick: (event) ->
-    actions.toggleGem()
+    toggleGem()
 
   render: ->
     statusStr = if @state?.status then 'activated' else 'deactivated'
