@@ -12,9 +12,9 @@ Gem = React.createClass
 
   render: ->
     statusStr = if @state?.status then 'activated' else 'deactivated'
-    (<p>
-      Gem is {statusStr} &nbsp;
+    (<div>
+      <p>Gem is {statusStr}</p>
       <button onClick={@onClick}>toggle</button>
-    </p>)
+    </div>)
 
 module.exports = Gem
