@@ -1,10 +1,12 @@
 'use strict'
 
 jest.dontMock '../gem/actions'
+jest.dontMock '../gem/store'
 jest.dontMock '../gem/component'
 
 React = require 'react/addons'
 {toggleGem} = require '../gem/actions'
+store = require '../gem/store'
 Gem = require '../gem/component'
 TestUtils = React.addons.TestUtils
 
@@ -33,10 +35,12 @@ describe 'Gem test', ->
     return
 
   it 'should respond to actions', ->
+    expect(store.isGemActivated).toBe false
     statusLabel = @renderedDOM().querySelectorAll('p')[0]
     expect(statusLabel.textContent).toEqual 'Gem is deactivated'
 
     toggleGem().then ->
+      expect(store.isGemActivated).toBe true
       expect(statusLabel.textContent).toEqual 'Gem is activated'
       return
     return
@@ -62,9 +66,11 @@ describe 'Gem shallow test', ->
     return
 
   it 'should respond to actions as well', ->
+    expect(store.isGemActivated).toBe false
     statusLabel = @gem.props.children[0]
     expect(statusLabel.props.children[1]).toEqual 'deactivated'
 
     toggleGem().then ->
+      expect(store.isGemActivated).toBe true
       expect(statusLabel.props.children[1]).toEqual 'activated'
     return
