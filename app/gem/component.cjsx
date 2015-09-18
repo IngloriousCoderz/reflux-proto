@@ -8,6 +8,7 @@ Gem = React.createClass
 
   onClick: (event) ->
     toggleGem()
+    return
 
   render: ->
     statusStr = if @state?.status then 'activated' else 'deactivated'
